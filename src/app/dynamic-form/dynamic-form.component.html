@@ -1,4 +1,6 @@
 <form [formGroup]="form">
-  <ng-container *ngFor="let field of config" appDynamicField [config]="field">
+  <ng-container *ngFor="let field of config" [appDynamicField]="field">
   </ng-container>
 </form>
+
+<pre>{{ form.value | json }}</pre>

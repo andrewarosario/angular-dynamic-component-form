@@ -12,7 +12,7 @@ const components = {
   selector: '[appDynamicField]',
 })
 export class DynamicFieldDirective<T> implements OnInit {
-  @Input() config: DynamicFormConfig;
+  @Input('appDynamicField') config: DynamicFormConfig;
 
   constructor(private viewContainerRef: ViewContainerRef) {}
 
