@@ -18,7 +18,10 @@ export class DynamicFormComponent implements OnInit {
 
   createForm() {
     this.config.forEach((control) =>
-      this.form.addControl(control.name, new FormControl(control.initialValue))
+      this.form.addControl(
+        control.name,
+        new FormControl(control.initialValue, control.validation)
+      )
     );
   }
 

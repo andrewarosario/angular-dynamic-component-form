@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Validators } from '@angular/forms';
 import { DynamicFormConfig } from './dynamic-form/dynamic-form-config.model';
 
 @Injectable({ providedIn: 'root' })
@@ -26,6 +27,7 @@ export class PokemonTrainerFormService {
         label: 'Seu nome',
         name: 'name',
         placeholder: 'Digite seu nome, treinador Pokémon!',
+        validation: [Validators.required],
       },
       {
         type: 'input',

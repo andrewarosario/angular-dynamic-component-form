@@ -1,3 +1,5 @@
+import { ValidatorFn } from '@angular/forms';
+
 export type DynamicFormConfig = {
   type: string;
   label: string;
@@ -5,4 +7,5 @@ export type DynamicFormConfig = {
   initialValue?: any;
   placeholder?: string;
   options?: string[];
+  validation?: ValidatorFn[];
 };
