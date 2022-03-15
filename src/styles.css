@@ -9,13 +9,14 @@ body {
 }
 
 form.submitted input.ng-invalid,
-input.ng-dirty.ng-invalid {
+input.ng-dirty.ng-invalid,
+select.ng-dirty.ng-invalid {
   border: 1px solid red;
 }
 
 label {
   display: block;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 0px;
   margin: 20px 0 5px;

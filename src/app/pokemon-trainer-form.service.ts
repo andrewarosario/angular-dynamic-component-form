@@ -27,19 +27,21 @@ export class PokemonTrainerFormService {
         label: 'Seu nome',
         name: 'name',
         placeholder: 'Digite seu nome, treinador Pokémon!',
-        validation: [Validators.required],
+        validation: [Validators.required, Validators.maxLength(30)],
       },
       {
         type: 'input',
         label: 'Sua cidade',
         name: 'city',
         placeholder: 'Pallet',
+        validation: [Validators.required, Validators.maxLength(20)],
       },
       {
         type: 'select',
         label: 'Escolha seu Pokémon inicial',
         name: 'initialPokemon',
         options: ['Bulbasaur', 'Charmander', 'Squirtle'],
+        validation: [Validators.required],
       },
     ];
   }
