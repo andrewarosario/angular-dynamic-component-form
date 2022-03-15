@@ -20,4 +20,9 @@ export class DynamicFormComponent implements OnInit {
       this.form.addControl(control.name, new FormControl(control.initialValue))
     );
   }
+
+  submit() {
+    console.log(this.form.value);
+    this.form.markAsPristine();
+  }
 }

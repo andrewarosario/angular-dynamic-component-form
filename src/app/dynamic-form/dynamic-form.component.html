@@ -1,6 +1,10 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="submit()">
   <ng-container *ngFor="let field of config" [appDynamicField]="field">
   </ng-container>
+
+  <button type="submit" [disabled]="form.pristine">
+    {{ form.pristine ? 'Salvo!' : 'Salvar' }}
+  </button>
 </form>
 
 <pre>{{ form.value | json }}</pre>
