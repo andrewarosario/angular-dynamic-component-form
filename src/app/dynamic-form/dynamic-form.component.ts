@@ -7,7 +7,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./dynamic-form.component.css'],
 })
 export class DynamicFormComponent implements OnInit {
-  @Input() formConfig = [];
+  @Input() config = [];
   form = new FormGroup({});
 
   ngOnInit() {
@@ -15,7 +15,7 @@ export class DynamicFormComponent implements OnInit {
   }
 
   createForm() {
-    this.formConfig.forEach((control) =>
+    this.config.forEach((control) =>
       this.form.addControl(control.name, new FormControl(''))
     );
   }
