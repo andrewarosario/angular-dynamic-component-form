@@ -5,7 +5,21 @@ import { DynamicFormConfig } from './dynamic-form/dynamic-form-config.model';
 export class PokemonTrainerFormService {
   private readonly LOCAL_STORAGE_KEY = 'pokemon-trainer-form';
 
-  getForm(): DynamicFormConfig[] {
+  getData(): DynamicFormConfig[] {
+    const savedValues = JSON.parse(
+      localStorage.getItem(this.LOCAL_STORAGE_KEY)
+    );
+    return this.getForm().map((field) => ({
+      ...field,
+      initialValue: savedValues?.[field.name] ?? field.initialValue,
+    }));
+  }
+
+  save(value: any) {
+    localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify(value));
+  }
+
+  private getForm(): DynamicFormConfig[] {
     return [
       {
         type: 'input',
@@ -26,19 +40,5 @@ export class PokemonTrainerFormService {
         options: ['Bulbasaur', 'Charmander', 'Squirtle'],
       },
     ];
-  }
-
-  getData(): DynamicFormConfig[] {
-    const savedValues = JSON.parse(
-      localStorage.getItem(this.LOCAL_STORAGE_KEY)
-    );
-    return this.getForm().map((field) => ({
-      ...field,
-      initialValue: savedValues?.[field.name] ?? field.initialValue,
-    }));
-  }
-
-  save(value: any) {
-    localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify(value));
   }
 }

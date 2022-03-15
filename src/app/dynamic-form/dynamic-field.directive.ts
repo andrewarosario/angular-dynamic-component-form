@@ -11,7 +11,7 @@ const components = {
 @Directive({
   selector: '[appDynamicField]',
 })
-export class DynamicFieldDirective<T> implements OnInit {
+export class DynamicFieldDirective implements OnInit {
   @Input('appDynamicField') config: DynamicFormConfig;
 
   constructor(private viewContainerRef: ViewContainerRef) {}
