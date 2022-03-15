@@ -14,12 +14,28 @@ export class PokemonTrainerFormService {
         placeholder: 'Digite seu nome, treinador Pokémon!',
       },
       {
+        type: 'input',
+        label: 'Sua cidade',
+        name: 'city',
+        placeholder: 'Pallet',
+      },
+      {
         type: 'select',
         label: 'Escolha seu Pokémon inicial',
         name: 'initialPokemon',
         options: ['Bulbasaur', 'Charmander', 'Squirtle'],
       },
     ];
+  }
+
+  getData(): DynamicFormConfig[] {
+    const savedValues = JSON.parse(
+      localStorage.getItem(this.LOCAL_STORAGE_KEY)
+    );
+    return this.getForm().map((field) => ({
+      ...field,
+      initialValue: savedValues?.[field.name] ?? field.initialValue,
+    }));
   }
 
   save(value: any) {

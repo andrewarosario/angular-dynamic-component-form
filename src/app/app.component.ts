@@ -8,7 +8,7 @@ import { PokemonTrainerFormService } from './pokemon-trainer-form.service';
 })
 export class AppComponent {
   constructor(private pokemonTrainerFormService: PokemonTrainerFormService) {}
-  config = this.pokemonTrainerFormService.getForm();
+  config = this.pokemonTrainerFormService.getData();
 
   save(value) {
     this.pokemonTrainerFormService.save(value);
