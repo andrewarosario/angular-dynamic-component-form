@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { DynamicFormConfig } from './dynamic-form-config.model';
 
@@ -9,6 +9,7 @@ import { DynamicFormConfig } from './dynamic-form-config.model';
 })
 export class DynamicFormComponent implements OnInit {
   @Input() config: DynamicFormConfig[] = [];
+  @Output() save = new EventEmitter();
   form = new FormGroup({});
 
   ngOnInit() {
@@ -22,7 +23,7 @@ export class DynamicFormComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.form.value);
+    this.save.emit(this.form.value);
     this.form.markAsPristine();
   }
 }

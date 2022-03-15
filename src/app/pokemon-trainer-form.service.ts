@@ -3,6 +3,8 @@ import { DynamicFormConfig } from './dynamic-form/dynamic-form-config.model';
 
 @Injectable({ providedIn: 'root' })
 export class PokemonTrainerFormService {
+  private readonly LOCAL_STORAGE_KEY = 'pokemon-trainer-form';
+
   getForm(): DynamicFormConfig[] {
     return [
       {
@@ -18,5 +20,9 @@ export class PokemonTrainerFormService {
         options: ['Bulbasaur', 'Charmander', 'Squirtle'],
       },
     ];
+  }
+
+  save(value: any) {
+    localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify(value));
   }
 }
