@@ -8,9 +8,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class DynamicFormComponent implements OnInit {
   @Input() formConfig = [];
-  form: FormGroup;
-
-  constructor() {}
+  form = new FormGroup({});
 
   ngOnInit() {
     this.createForm();

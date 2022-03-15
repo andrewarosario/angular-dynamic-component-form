@@ -1,3 +1,4 @@
-<p>
-dynamic-form works!
-</p>
+<form [formGroup]="form">
+  <ng-container *ngFor="let field of config" appDynamicField [config]="field">
+  </ng-container>
+</form>
