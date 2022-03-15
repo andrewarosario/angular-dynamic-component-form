@@ -8,6 +8,11 @@ body {
   color: #272c3f;
 }
 
+form.submitted input.ng-invalid,
+input.ng-dirty.ng-invalid {
+  border: 1px solid red;
+}
+
 label {
   display: block;
   font-size: 16px;
