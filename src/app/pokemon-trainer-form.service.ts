@@ -12,11 +12,6 @@ export class PokemonTrainerFormService {
         placeholder: 'Digite seu nome, treinador Pokémon!',
       },
       {
-        type: 'input-number',
-        label: 'Quantos anos você tem',
-        name: 'age',
-      },
-      {
         type: 'select',
         label: 'Escolha seu Pokémon inicial',
         name: 'initialPokemon',
