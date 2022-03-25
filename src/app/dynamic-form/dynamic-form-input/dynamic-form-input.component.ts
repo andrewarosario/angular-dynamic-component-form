@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ControlContainer, FormGroupDirective } from '@angular/forms';
-import { DynamicFormConfig } from '../dynamic-form-config.model';
+import { DynamicFormConfig } from '../models/dynamic-form-config.model';
 
 @Component({
   selector: 'app-dynamic-form-input',

@@ -1,5 +1,5 @@
 import { Directive, Input, OnInit, ViewContainerRef } from '@angular/core';
-import { DynamicFormConfig } from './dynamic-form-config.model';
+import { DynamicFormConfig } from './models/dynamic-form-config.model';
 import { DynamicFormInputComponent } from './dynamic-form-input/dynamic-form-input.component';
 import { DynamicFormSelectComponent } from './dynamic-form-select/dynamic-form-select.component';
 

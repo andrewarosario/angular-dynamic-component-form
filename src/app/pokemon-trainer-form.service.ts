@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { DynamicFormConfig } from './dynamic-form/dynamic-form-config.model';
+import { DynamicFormConfig } from './dynamic-form/models/dynamic-form-config.model';
+
 
 @Injectable({ providedIn: 'root' })
 export class PokemonTrainerFormService {

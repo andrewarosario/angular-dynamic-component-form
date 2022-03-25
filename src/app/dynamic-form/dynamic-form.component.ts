@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { DynamicFormConfig } from './dynamic-form-config.model';
+import { DynamicFormConfig } from './models/dynamic-form-config.model';
 
 @Component({
   selector: 'app-dynamic-form',
