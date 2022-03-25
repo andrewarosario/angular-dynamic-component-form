@@ -1,7 +1,8 @@
-<div >
+<div>
   <label>{{ config.label }}</label>
   <input
-    type="text"
+    [attr.type]="config.type.typeField || 'text'"
     [attr.placeholder]="config.placeholder"
-    [formControlName]="config.name" />
+    [formControlName]="config.name"
+  />
 </div>
