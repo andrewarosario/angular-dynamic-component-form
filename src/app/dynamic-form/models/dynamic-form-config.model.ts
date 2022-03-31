@@ -1,9 +1,11 @@
 import { ValidatorFn } from '@angular/forms';
 
+export type Fields = 'input' | 'select';
+
 export type TypeControl = {
-  field: 'input' | 'select';
+  field: Fields;
   typeField?: string;
-}
+};
 
 export type DynamicFormConfig = {
   type: TypeControl;

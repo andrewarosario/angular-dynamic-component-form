@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ControlContainer, FormGroupDirective } from '@angular/forms';
+import { DynamicControl } from '../interfaces/dynamic-control.interface';
 import { DynamicFormConfig } from '../models/dynamic-form-config.model';
 
 @Component({
@@ -10,6 +11,6 @@ import { DynamicFormConfig } from '../models/dynamic-form-config.model';
     { provide: ControlContainer, useExisting: FormGroupDirective },
   ],
 })
-export class DynamicFormSelectComponent {
+export class DynamicFormSelectComponent implements DynamicControl {
   config: DynamicFormConfig;
 }
